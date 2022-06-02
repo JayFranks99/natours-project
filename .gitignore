@@ -1,0 +1,2 @@
+## Ignore npm package files, can pull these in with package-lock.json
+node_modules/

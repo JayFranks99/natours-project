@@ -1,0 +1,21 @@
+// Html resets
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* Setting root font size to use rem units effectively, can change this for differnt media queries
+2rem = 2x10px = 20px */
+html {
+  /* Default is 16px - use percentage for setting default */
+  font-size: 100%;
+  /* font-size: 16px; */
+}
+
+body {
+  padding: 2rem;
+  box-sizing: border-box;
+}
