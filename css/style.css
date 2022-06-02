@@ -13,26 +13,48 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+/* Setting root font size to use rem units effectively, can change this for differnt media queries
+2rem = 2x10px = 20px */
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   color: #777;
-  padding: 30px;
+  padding: 2rem;
 }
 
-.btn {
-  background-color: white;
-  color: #777;
-  padding: 17.5px 35px;
-  border-radius: 2em;
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 2rem;
   border: none;
   text-transform: uppercase;
+  transition: all 0.5s;
 }
 
 .btn:hover {
   cursor: pointer;
+  transform: translateY(0.2rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: white;
+  color: #777;
 }
 
 .header {
@@ -55,13 +77,13 @@ body {
 
 .header-image {
   position: absolute;
-  top: 35px;
-  left: 35px;
+  top: 2rem;
+  left: 2rem;
   animation: fadeIn 3s;
 }
 
 .header-image-logo {
-  height: 35px;
+  height: 2rem;
   width: auto;
 }
 
@@ -73,11 +95,13 @@ body {
 
 .header-content-heading {
   font-weight: 700;
+  /* Fixes shake when animating this element */
+  backface-visibility: hidden;
 }
 
 .header-content-heading-main {
-  font-size: 60px;
-  letter-spacing: 35px;
+  font-size: 4rem;
+  letter-spacing: 2rem;
   animation: moveInLeft 2s ease-out;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   /* animation: moveInLeft 2s; */
@@ -90,13 +114,13 @@ body {
 }
 
 .header-content-heading-sub {
-  font-size: 20px;
-  letter-spacing: 17.4px;
+  font-size: 1.25rem;
+  letter-spacing: 1rem;
   animation: moveInRight 2s;
 }
 
-.header-content button {
-  margin-top: 50px;
+.header-content .btn {
+  margin-top: 3rem;
   animation: fadeIn 2s;
   animation: zoomIn 2s;
 }
@@ -108,44 +132,44 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-13rem);
   }
 
   50% {
-    transform: translateX(20px);
+    transform: translateX(1.5rem);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(13rem);
   }
 
   50% {
-    transform: translateX(-20px);
+    transform: translateX(-1.5rem);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
 
 @keyframes moveInUp {
   0% {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(13rem);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
 
