@@ -1,6 +1,17 @@
+// --- Colours ----//
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-grey: #777;
+$color-light-grey-1: #f7f7f7;
 $color-white: #fff;
 $color-black: #000;
+
+// --- Bootstrap ----//
+
+// Changing bootstrap grid columns var from 12 to 24 for 8 point grid system
+$grid-columns: 24 !default;
+
+// Btn customsiation
+$btn-padding-y: 5px;
+$btn-padding-x: 25px;

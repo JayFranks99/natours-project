@@ -1,71 +1,9 @@
-.header {
-  @include display-flex-center();
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url(/img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /* Specifying x & y coordinates for each four values e.g top left x = 0, y = 0 */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
+// ----- Section About ----- //
 
-.header-image {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  animation: fadeIn 3s;
-}
-
-.header-image-logo {
-  height: 2rem;
-  width: auto;
-}
-
-.header-content {
-  text-align: center;
-  text-transform: uppercase;
-  color: $color-white;
-}
-
-.header-content-heading {
-  font-weight: 700;
-  /* Fixes shake when animating this element */
-  backface-visibility: hidden;
-}
-
-.header-content-heading-main {
-  font-size: 4rem;
-  letter-spacing: 2rem;
-  animation: moveInLeft 2s ease-out;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-  /* animation: moveInLeft 2s; */
-  /* animation-timing-function: ease; */
-  /* animation-delay: 1s; */
-  /* animation-iteration-count: infinite; */
-  /* animation-iteration-count: unset;
-      animation-direction: normal;
-      animation-fill-mode: none; */
-}
-
-.header-content-heading-sub {
-  font-size: 1.25rem;
-  letter-spacing: 1rem;
-  animation: moveInRight 2s;
-}
-
-.header-content .btn {
-  margin-top: 3rem;
-  animation: fadeIn 2s;
-  animation: zoomIn 2s;
-}
-
-.header-content span {
-  display: block;
+.section-about {
+  background-color: $color-light-grey-1;
+  padding: 12.5rem 0 5rem;
+  margin-top: -20vh;
 }
 
 @media (min-width: 1500px) {

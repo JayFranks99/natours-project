@@ -16,6 +16,7 @@
     "url": "https://github.com/JayFranks99/natours-project/issues"
   },
   "devDependencies": {
+    "bootstrap": "^5.1.3",
     "node-sass": "^7.0.1"
   }
 }

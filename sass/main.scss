@@ -1,12 +1,39 @@
+// NOTE: Abstracts don't produce any CSS
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
+
+// @import "vendors/bootstrap";
+
+// --- BOOTSTRAP FILES --- //
+
+// Create your own map
+$custom-colors: (
+  "primary": hsl(231, 69%, 60%),
+  "secondary": hsl(0, 94%, 66%),
+  "grey": hsl(229, 8%, 60%),
+);
+
+// Importing bootstrap elements
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Improting bootstrap scss
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// --- END OF BOOTSTRAP FILES --- //
 
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
 @import "base/utilities";
 
-@import "components/buttons";
+@import "components/button";
+@import "components/header";
+@import "components/image-composition";
 
 @import "pages/home";
