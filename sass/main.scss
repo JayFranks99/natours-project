@@ -35,5 +35,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "components/button";
 @import "components/header";
 @import "components/image-composition";
+@import "components/features-card";
 
 @import "pages/home";

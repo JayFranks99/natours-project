@@ -1,6 +1,6 @@
 .image-composition {
   position: relative;
-  //hover over div, which imagea are not being hovered shrink
+  //hover over div, which images are not being hovered shrink
   &:hover .image-composition-image:not(:hover) {
     transform: scale(0.9);
   }

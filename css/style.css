@@ -8362,6 +8362,13 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 2rem; }
 
+.text-gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; }
+
 .my-6 {
   margin: 5rem auto; }
 
@@ -8501,10 +8508,35 @@ body {
   top: 6rem;
   left: 20%; }
 
+.features-card {
+  padding: 2rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  border-radius: 0.1rem;
+  transition: transform 0.2s; }
+  .features-card:hover {
+    transform: translateY(-10px) scale(1.03); }
+
+.features-card-icon {
+  font-size: 3rem; }
+
+.features-card-heading {
+  margin-top: 1.5rem; }
+
 .section-about {
   background-color: #f7f7f7;
-  padding: 12.5rem 0 5rem;
+  padding: 15rem 0 10rem;
   margin-top: -20vh; }
+
+.section-features {
+  transform: skewY(-7deg);
+  margin-top: -10vh;
+  padding: 10rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/img/hero.jpg);
+  background-size: cover;
+  background-position: top; }
+  .section-features > * {
+    transform: skewY(7deg); }
 
 @media (min-width: 1500px) {
   /* Changing root size to change all sizes on large screens */
