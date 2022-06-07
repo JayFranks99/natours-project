@@ -16,13 +16,13 @@
 
 .header-image {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 3rem;
+  left: 3rem;
   animation: fadeIn 3s;
 }
 
 .header-image-logo {
-  height: 2rem;
+  height: 4rem;
   width: auto;
 }
 
@@ -39,8 +39,8 @@
 }
 
 .header-content-heading-main {
-  font-size: 4rem;
-  letter-spacing: 2rem;
+  font-size: 8rem;
+  letter-spacing: 3rem;
   animation: moveInLeft 2s ease-out;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   /* animation: moveInLeft 2s; */
@@ -50,16 +50,23 @@
   /* animation-iteration-count: unset;
       animation-direction: normal;
       animation-fill-mode: none; */
+
+  @include respond(phone) {
+    letter-spacing: 2rem;
+  }
 }
 
 .header-content-heading-sub {
-  font-size: 1.25rem;
-  letter-spacing: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: 1.5rem;
   animation: moveInRight 2s;
+
+  @include respond(phone) {
+  }
 }
 
 .header-content .btn {
-  margin-top: 3rem;
+  margin-top: 4rem;
   animation: fadeIn 2s;
   animation: zoomIn 2s;
 }

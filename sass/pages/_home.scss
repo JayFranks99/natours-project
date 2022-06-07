@@ -2,13 +2,13 @@
 
 .section-about {
   background-color: $color-light-grey-1;
-  padding: 15rem 0 10rem;
+  padding: 20rem 0 17.5rem;
   margin-top: -20vh;
 }
 
 .section-features {
-  transform: skewY(-7deg);
-  margin-top: -10vh;
+  transform: skewY(-6deg);
+  margin-top: -15vh;
   padding: 10rem 0;
   background-image: linear-gradient(
       to right bottom,
@@ -20,20 +20,6 @@
   background-position: top;
 
   & > * {
-    transform: skewY(7deg);
-  }
-}
-
-@media (min-width: 1500px) {
-  /* Changing root size to change all sizes on large screens */
-  html {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Changing root size to change all sizes on large screens */
-  html {
-    font-size: 8px;
+    transform: skewY(6deg);
   }
 }

@@ -7,15 +7,32 @@
   box-sizing: inherit;
 }
 
-/* Setting root font size to use rem units effectively, can change this for differnt media queries
-2rem = 2x10px = 20px */
+/* Setting root font size to use rem units effectively, can change this for differnt media queries */
+
 html {
-  /* Default is 16px - use percentage for setting default */
-  font-size: 100%;
-  /* font-size: 16px; */
+  // This defines what 1rem is
+  font-size: 50%; //1 rem = 8px; 8x/16px = 50%
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 43.75%; //1 rem = 7px; 7x/16px = 43.75%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 37.5%; //1 rem = 6px, 6/16 = 37.5%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 62.5%; //1rem = 12, 10/16 = 62.5%
+  }
 }
 
 body {
-  padding: 2rem;
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

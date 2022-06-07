@@ -1,3 +1,20 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -8272,9 +8289,9 @@ textarea.form-control-lg {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-13rem); }
+    transform: translateX(-26rem); }
   50% {
-    transform: translateX(1.5rem); }
+    transform: translateX(3rem); }
   100% {
     opacity: 1;
     transform: translateX(0); } }
@@ -8282,9 +8299,9 @@ textarea.form-control-lg {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(13rem); }
+    transform: translateX(26rem); }
   50% {
-    transform: translateX(-1.5rem); }
+    transform: translateX(-3rem); }
   100% {
     opacity: 1;
     transform: translateX(0); } }
@@ -8292,7 +8309,7 @@ textarea.form-control-lg {
 @keyframes moveInUp {
   0% {
     opacity: 0;
-    transform: translateY(13rem); }
+    transform: translateY(26rem); }
   100% {
     opacity: 1;
     transform: translateX(0); } }
@@ -8324,26 +8341,34 @@ textarea.form-control-lg {
   padding: 0;
   box-sizing: inherit; }
 
-/* Setting root font size to use rem units effectively, can change this for differnt media queries
-2rem = 2x10px = 20px */
+/* Setting root font size to use rem units effectively, can change this for differnt media queries */
 html {
-  /* Default is 16px - use percentage for setting default */
-  font-size: 100%;
-  /* font-size: 16px; */ }
+  font-size: 50%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 43.75%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 37.5%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 62.5%; } }
 
 body {
-  padding: 2rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
   line-height: 1.5;
   color: #777; }
 
 .heading-secondary {
-  font-size: 2rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: bold;
   display: inline-block;
@@ -8353,14 +8378,14 @@ body {
   color: transparent; }
 
 .heading-third {
-  font-size: 0.9rem;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase; }
 
 .paragraph {
-  font-size: 0.9rem; }
+  font-size: 2rem; }
   .paragraph:not(:last-child) {
-    margin-bottom: 2rem; }
+    margin-bottom: 3rem; }
 
 .text-gradient {
   display: inline-block;
@@ -8370,22 +8395,22 @@ body {
   color: transparent; }
 
 .my-6 {
-  margin: 5rem auto; }
+  margin: 10rem auto; }
 
 .my-7 {
-  margin: 7.5rem auto; }
+  margin: 15rem auto; }
 
 .my-8 {
-  margin: 10rem auto; }
+  margin: 20rem auto; }
 
 .btn:link,
 .btn:visited {
   display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 0.75rem;
+  padding: 2rem 3.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 2rem;
+  border-radius: 4rem;
   border: none;
   text-transform: uppercase;
   transition: all 0.5s; }
@@ -8396,8 +8421,8 @@ body {
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2); }
 
 .btn:active {
-  transform: translateY(0.1rem);
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); }
+  transform: translateY(0.2rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn-white {
   background-color: #fff;
@@ -8405,20 +8430,21 @@ body {
 
 .btn-text:link,
 .btn-text:visited {
+  font-size: 2rem;
   color: #55c57a;
   text-decoration: none;
   border-bottom: 1px solid #55c57a;
-  padding: 0.5rem;
+  padding: 1rem;
   transition: all 0.5s; }
   .btn-text:link:hover,
   .btn-text:visited:hover {
     background-color: #55c57a;
     color: #fff;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2); }
   .btn-text:link:active,
   .btn-text:visited:active {
-    transform: translateY(0.5rem);
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); }
+    transform: translateY(1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .header {
   display: flex;
@@ -8435,12 +8461,12 @@ body {
 
 .header-image {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 3rem;
+  left: 3rem;
   animation: fadeIn 3s; }
 
 .header-image-logo {
-  height: 2rem;
+  height: 4rem;
   width: auto; }
 
 .header-content {
@@ -8454,8 +8480,8 @@ body {
   backface-visibility: hidden; }
 
 .header-content-heading-main {
-  font-size: 4rem;
-  letter-spacing: 2rem;
+  font-size: 8rem;
+  letter-spacing: 3rem;
   animation: moveInLeft 2s ease-out;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   /* animation: moveInLeft 2s; */
@@ -8465,14 +8491,17 @@ body {
   /* animation-iteration-count: unset;
       animation-direction: normal;
       animation-fill-mode: none; */ }
+  @media only screen and (max-width: 37.5em) {
+    .header-content-heading-main {
+      letter-spacing: 2rem; } }
 
 .header-content-heading-sub {
-  font-size: 1.25rem;
-  letter-spacing: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: 1.5rem;
   animation: moveInRight 2s; }
 
 .header-content .btn {
-  margin-top: 3rem;
+  margin-top: 4rem;
   animation: fadeIn 2s;
   animation: zoomIn 2s; }
 
@@ -8512,38 +8541,28 @@ body {
   padding: 2rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  border-radius: 0.1rem;
+  border-radius: 0.25rem;
   transition: transform 0.2s; }
   .features-card:hover {
     transform: translateY(-10px) scale(1.03); }
 
 .features-card-icon {
-  font-size: 3rem; }
+  font-size: 6rem; }
 
 .features-card-heading {
-  margin-top: 1.5rem; }
+  margin-top: 3rem; }
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 15rem 0 10rem;
+  padding: 20rem 0 17.5rem;
   margin-top: -20vh; }
 
 .section-features {
-  transform: skewY(-7deg);
-  margin-top: -10vh;
+  transform: skewY(-6deg);
+  margin-top: -15vh;
   padding: 10rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/img/hero.jpg);
   background-size: cover;
   background-position: top; }
   .section-features > * {
-    transform: skewY(7deg); }
-
-@media (min-width: 1500px) {
-  /* Changing root size to change all sizes on large screens */
-  html {
-    font-size: 20px; } }
-
-@media (max-width: 768px) {
-  /* Changing root size to change all sizes on large screens */
-  html {
-    font-size: 8px; } }
+    transform: skewY(6deg); }
